@@ -40,25 +40,15 @@ class Main {
 
 
 
-class Solution {
+class Solution
+{
     
-        public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        Solution solution = new Solution();
-        int N = scn.nextInt();
-        solution.printNos(N);
+  public void printNos(int N)
+    {
+        //Your code here\
+        if(N==0) return;
+        printNos(N-1);
+        System.out.print(N+ " ");
     }
-    public void printNos(int N) {
-        printNnumbers(1, N); // Start printing numbers from 1 to N
-    }
-    
-    public int printNnumbers(int current, int N) {
-        if (current <= N) {
-            System.out.print(current + " "); // Print the current number
-            return 1 + printNnumbers(current + 1, N); // Recursively print the next number and return the count
-        }
-        return 0; // Base case: reached N, so return 0
-    }
-    
-
 }
+
