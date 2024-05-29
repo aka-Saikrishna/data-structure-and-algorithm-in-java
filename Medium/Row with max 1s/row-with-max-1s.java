@@ -36,29 +36,22 @@ public class Main {
 class Solution {
     int rowWithMax1s(int arr[][], int n, int m) {
         // code here
-        int a=0;
-        int i=0;
-        int b=0;
-        for(i =0;i<n;i++){
-            int s=0;
-            for(int j=0;j<m;j++){
-                if(arr[i][j]==1){
-                    s++;
-                
-                }}
-                if(s>a){
-                    a=s;
-                    b=i;
-                    
-             }
-             
+    
+        if (n == 0) return -1; // No rows
+       
+        if (m == 0) return -1; // No columns
         
-           }
-           if(a!=0){return b;
-           }
-           return -1;
-                
+        int maxRowIndex = -1;
+        int j = m - 1; // Start from the top-right corner
+        
+        for (int i = 0; i < n; i++) {
+            
+            while (j >= 0 && arr[i][j] == 1) {
+                j--; // Move left
+                maxRowIndex = i; // Update the row index with max 1s
             }
-            
-            
         }
+        
+        return maxRowIndex;
+    }
+}
